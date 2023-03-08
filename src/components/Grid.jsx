@@ -1,8 +1,9 @@
 import Component from "./Test";
 import { useEffect } from "react";
 import { createServer } from "miragejs";
-import fakeData from "../fakeData";
+import { useSelector } from "react-redux";
 
+let fakeData;
 createServer({
   routes() {
     this.get("/api/members", () => fakeData);
@@ -10,6 +11,7 @@ createServer({
 });
 
 function Grid(props) {
+  fakeData = useSelector((state) => state.membersSlice.members);
   useEffect(() => {
     fetch("/api/members")
       .then((response) => response.json())
