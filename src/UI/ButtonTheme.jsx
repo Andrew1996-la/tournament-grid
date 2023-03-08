@@ -21,7 +21,7 @@ function ButtonTheme(props) {
       className="dark:bg-bgLightMode bg-gridBgDarkMode dark:text-textLightMode text-textDarkMode absolute top-[20px] right-2 bg-emerald-700 hover:bg-emerald-900 text-white font-bold py-2 px-4 rounded"
       onClick={handleChangeTheme}
     >
-      Dark mode
+      {theme === "dark" ? "Light mode" : "Dark mode"}
     </button>
   );
 }
