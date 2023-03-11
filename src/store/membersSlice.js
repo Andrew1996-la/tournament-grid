@@ -4,13 +4,13 @@ import fakeData from "../fakeData";
 const membersSlice = createSlice({
   name: "members",
   initialState: {
-    members: fakeData,
+    members: [],
   },
   reducers: {
-    addMember: (state) => state,
+    setMembers: (state, action) => ({ ...state, members: action.payload }),
   },
 });
 
-export const { addMember } = membersSlice.actions;
+export const { setMembers } = membersSlice.actions;
 
 export default membersSlice.reducer;
